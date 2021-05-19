@@ -36,8 +36,28 @@ namespace Lab3
         {
             return a / b;
         }
+        private static float DoOperation(float a, float b, string oper)
+        {
+            switch (oper)
+            {
+                case "+": return DoSum(a, b);
+                case "-": return DoSub(a, b);
+                case "/": return DoDiv(a, b);
+                case "*": return DoMul(a, b);
+            }
+
+            throw new InvalidOperationException("Invalid operator");
+        }
         public static void Main(string[] args)
         {
+            float a = SelectA();
+            float b = SelectB();
+            
+            Console.Write("Введите оператор: ");
+            string oper = Console.ReadLine();
+            
+            Console.Write("Ответ: ");
+            Console.WriteLine(DoOperation(a, b, oper));
         }
     }
 }
