@@ -20,6 +20,10 @@ namespace Lab3
             b = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
             return b;
         }
+        private static float DoSum(float a, float b)
+        {
+            return a + b;
+        }
         public static void Main(string[] args)
         {
         }
